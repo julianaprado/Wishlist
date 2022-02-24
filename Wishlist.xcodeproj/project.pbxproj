@@ -15,6 +15,15 @@
 		DBB485F427C6F99C00F384D2 /* WishlistTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB485F327C6F99C00F384D2 /* WishlistTests.swift */; };
 		DBB485FE27C6F99C00F384D2 /* WishlistUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB485FD27C6F99C00F384D2 /* WishlistUITests.swift */; };
 		DBB4860027C6F99C00F384D2 /* WishlistUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB485FF27C6F99C00F384D2 /* WishlistUITestsLaunchTests.swift */; };
+		DBB4861427C6FB1A00F384D2 /* AllProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB4861327C6FB1A00F384D2 /* AllProductsViewController.swift */; };
+		DBB4861627C6FB2700F384D2 /* AllProductsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB4861527C6FB2700F384D2 /* AllProductsView.swift */; };
+		DBB4861827C6FB3700F384D2 /* AllProductsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB4861727C6FB3700F384D2 /* AllProductsViewModel.swift */; };
+		DBB4861D27C6FC9800F384D2 /* WishlistCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB4861C27C6FC9800F384D2 /* WishlistCore.swift */; };
+		DBB4861F27C6FCAD00F384D2 /* AllProductsCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB4861E27C6FCAD00F384D2 /* AllProductsCore.swift */; };
+		DBB4862427C7004C00F384D2 /* Core.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB4862327C7004C00F384D2 /* Core.swift */; };
+		DBB4862A27C7013900F384D2 /* PrductModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB4862927C7013900F384D2 /* PrductModel.swift */; };
+		DBB4862C27C7051800F384D2 /* Products.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB4862B27C7051800F384D2 /* Products.swift */; };
+		DBB4862F27C70DE400F384D2 /* StringConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB4862E27C70DE400F384D2 /* StringConstants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +56,15 @@
 		DBB485F927C6F99C00F384D2 /* WishlistUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WishlistUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBB485FD27C6F99C00F384D2 /* WishlistUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishlistUITests.swift; sourceTree = "<group>"; };
 		DBB485FF27C6F99C00F384D2 /* WishlistUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishlistUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		DBB4861327C6FB1A00F384D2 /* AllProductsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllProductsViewController.swift; sourceTree = "<group>"; };
+		DBB4861527C6FB2700F384D2 /* AllProductsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllProductsView.swift; sourceTree = "<group>"; };
+		DBB4861727C6FB3700F384D2 /* AllProductsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllProductsViewModel.swift; sourceTree = "<group>"; };
+		DBB4861C27C6FC9800F384D2 /* WishlistCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishlistCore.swift; sourceTree = "<group>"; };
+		DBB4861E27C6FCAD00F384D2 /* AllProductsCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllProductsCore.swift; sourceTree = "<group>"; };
+		DBB4862327C7004C00F384D2 /* Core.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Core.swift; sourceTree = "<group>"; };
+		DBB4862927C7013900F384D2 /* PrductModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrductModel.swift; sourceTree = "<group>"; };
+		DBB4862B27C7051800F384D2 /* Products.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Products.swift; sourceTree = "<group>"; };
+		DBB4862E27C70DE400F384D2 /* StringConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringConstants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,8 +153,11 @@
 		DBB4860D27C6FA5800F384D2 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				DBB4862D27C70DC900F384D2 /* Constants */,
+				DBB4862527C700F900F384D2 /* Model */,
 				DBB485DC27C6F99B00F384D2 /* AppDelegate.swift */,
 				DBB485DE27C6F99B00F384D2 /* SceneDelegate.swift */,
+				DBB4862327C7004C00F384D2 /* Core.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -144,7 +165,10 @@
 		DBB4860E27C6FA5C00F384D2 /* Wishlist */ = {
 			isa = PBXGroup;
 			children = (
-				DBB485E027C6F99B00F384D2 /* ViewController.swift */,
+				DBB4861C27C6FC9800F384D2 /* WishlistCore.swift */,
+				DBB4861B27C6FB4800F384D2 /* ViewModels */,
+				DBB4861A27C6FB4100F384D2 /* Controllers */,
+				DBB4861927C6FB3C00F384D2 /* Views */,
 			);
 			path = Wishlist;
 			sourceTree = "<group>";
@@ -152,8 +176,75 @@
 		DBB4860F27C6FA6200F384D2 /* AllProducts */ = {
 			isa = PBXGroup;
 			children = (
+				DBB4861E27C6FCAD00F384D2 /* AllProductsCore.swift */,
+				DBB4861227C6FAF800F384D2 /* ViewModels */,
+				DBB4861127C6FAF300F384D2 /* Views */,
+				DBB4861027C6FAE900F384D2 /* Controllers */,
 			);
 			path = AllProducts;
+			sourceTree = "<group>";
+		};
+		DBB4861027C6FAE900F384D2 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				DBB4861327C6FB1A00F384D2 /* AllProductsViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		DBB4861127C6FAF300F384D2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DBB4861527C6FB2700F384D2 /* AllProductsView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DBB4861227C6FAF800F384D2 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				DBB4861727C6FB3700F384D2 /* AllProductsViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		DBB4861927C6FB3C00F384D2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DBB4861A27C6FB4100F384D2 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				DBB485E027C6F99B00F384D2 /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		DBB4861B27C6FB4800F384D2 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		DBB4862527C700F900F384D2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DBB4862927C7013900F384D2 /* PrductModel.swift */,
+				DBB4862B27C7051800F384D2 /* Products.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		DBB4862D27C70DC900F384D2 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				DBB4862E27C70DE400F384D2 /* StringConstants.swift */,
+			);
+			path = Constants;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -286,9 +377,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DBB4862427C7004C00F384D2 /* Core.swift in Sources */,
+				DBB4862C27C7051800F384D2 /* Products.swift in Sources */,
+				DBB4861827C6FB3700F384D2 /* AllProductsViewModel.swift in Sources */,
 				DBB485E127C6F99B00F384D2 /* ViewController.swift in Sources */,
+				DBB4862A27C7013900F384D2 /* PrductModel.swift in Sources */,
+				DBB4861627C6FB2700F384D2 /* AllProductsView.swift in Sources */,
 				DBB485DD27C6F99B00F384D2 /* AppDelegate.swift in Sources */,
+				DBB4861427C6FB1A00F384D2 /* AllProductsViewController.swift in Sources */,
+				DBB4862F27C70DE400F384D2 /* StringConstants.swift in Sources */,
 				DBB485DF27C6F99B00F384D2 /* SceneDelegate.swift in Sources */,
+				DBB4861F27C6FCAD00F384D2 /* AllProductsCore.swift in Sources */,
+				DBB4861D27C6FC9800F384D2 /* WishlistCore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -465,7 +565,6 @@
 				INFOPLIST_KEY_CFBundleDisplayName = Wishlist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -495,7 +594,6 @@
 				INFOPLIST_KEY_CFBundleDisplayName = Wishlist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
