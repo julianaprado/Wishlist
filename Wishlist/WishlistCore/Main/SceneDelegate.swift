@@ -10,7 +10,6 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-    let products = Products()
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // 1. Capture the scene if there is one into a variable
@@ -24,9 +23,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         // 3. Set the window and make it keyAndVisible
         self.window = window
+        self.window?.overrideUserInterfaceStyle = .dark
         window.makeKeyAndVisible()
         
-        let core = Core(products: products.getProducts())
+        let core = Core()
         core.coreSetup(nav: nav)
     }
 

@@ -8,16 +8,18 @@
 import Foundation
 import UIKit
 
-public protocol AllProductsCoreProtocol: AnyObject{
-    func showAllProducts(nav: UINavigationController)
+protocol AllProductsCoreProtocol: AnyObject{
+    func showAllProducts(nav: UINavigationController, products: Products)
 }
 
 
 public class AllProductsCore: AllProductsCoreProtocol {
-    public func showAllProducts(nav: UINavigationController) {
-        let controller = AllProductsViewController()
+    
+    func showAllProducts(nav: UINavigationController, products: Products) {
+        let controller = AllProductsViewController(products: products)
         nav.pushViewController(controller, animated: false)
     }
+    
 
 }
 

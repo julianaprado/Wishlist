@@ -9,4 +9,5 @@ import Foundation
 
 struct StringConstants{
     static let allProductsViewNavigationTitle = "All Products"
+    static let wishlistNavigationTitle = "Wishlist"
 }

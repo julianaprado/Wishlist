@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		DBB485DD27C6F99B00F384D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB485DC27C6F99B00F384D2 /* AppDelegate.swift */; };
 		DBB485DF27C6F99B00F384D2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB485DE27C6F99B00F384D2 /* SceneDelegate.swift */; };
-		DBB485E127C6F99B00F384D2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB485E027C6F99B00F384D2 /* ViewController.swift */; };
+		DBB485E127C6F99B00F384D2 /* WishlistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB485E027C6F99B00F384D2 /* WishlistViewController.swift */; };
 		DBB485E627C6F99C00F384D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DBB485E527C6F99C00F384D2 /* Assets.xcassets */; };
 		DBB485E927C6F99C00F384D2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBB485E727C6F99C00F384D2 /* LaunchScreen.storyboard */; };
 		DBB485F427C6F99C00F384D2 /* WishlistTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB485F327C6F99C00F384D2 /* WishlistTests.swift */; };
@@ -20,10 +20,17 @@
 		DBB4861827C6FB3700F384D2 /* AllProductsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB4861727C6FB3700F384D2 /* AllProductsViewModel.swift */; };
 		DBB4861D27C6FC9800F384D2 /* WishlistCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB4861C27C6FC9800F384D2 /* WishlistCore.swift */; };
 		DBB4861F27C6FCAD00F384D2 /* AllProductsCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB4861E27C6FCAD00F384D2 /* AllProductsCore.swift */; };
-		DBB4862427C7004C00F384D2 /* Core.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB4862327C7004C00F384D2 /* Core.swift */; };
+		DBB4862427C7004C00F384D2 /* CoreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB4862327C7004C00F384D2 /* CoreViewModel.swift */; };
 		DBB4862A27C7013900F384D2 /* PrductModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB4862927C7013900F384D2 /* PrductModel.swift */; };
 		DBB4862C27C7051800F384D2 /* Products.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB4862B27C7051800F384D2 /* Products.swift */; };
 		DBB4862F27C70DE400F384D2 /* StringConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB4862E27C70DE400F384D2 /* StringConstants.swift */; };
+		DBB4863227C71AA700F384D2 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB4863127C71AA700F384D2 /* Protocols.swift */; };
+		DBB4863727C8033A00F384D2 /* CoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB4863627C8033A00F384D2 /* CoreViewController.swift */; };
+		DBB4863B27C8090100F384D2 /* CoreProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB4863A27C8090100F384D2 /* CoreProtocols.swift */; };
+		DBB4863D27C80D6500F384D2 /* WishlistViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB4863C27C80D6500F384D2 /* WishlistViewModel.swift */; };
+		DBB4863F27C80DAF00F384D2 /* WishlistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB4863E27C80DAF00F384D2 /* WishlistView.swift */; };
+		DBB4864227C87F6E00F384D2 /* AllProductsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB4864127C87F6E00F384D2 /* AllProductsCell.swift */; };
+		DBB4864727C97B4600F384D2 /* WishlistCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB4864627C97B4600F384D2 /* WishlistCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,7 +54,7 @@
 		DBB485D927C6F99B00F384D2 /* Wishlist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wishlist.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBB485DC27C6F99B00F384D2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DBB485DE27C6F99B00F384D2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		DBB485E027C6F99B00F384D2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DBB485E027C6F99B00F384D2 /* WishlistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishlistViewController.swift; sourceTree = "<group>"; };
 		DBB485E527C6F99C00F384D2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DBB485E827C6F99C00F384D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DBB485EA27C6F99C00F384D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -61,10 +68,17 @@
 		DBB4861727C6FB3700F384D2 /* AllProductsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllProductsViewModel.swift; sourceTree = "<group>"; };
 		DBB4861C27C6FC9800F384D2 /* WishlistCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishlistCore.swift; sourceTree = "<group>"; };
 		DBB4861E27C6FCAD00F384D2 /* AllProductsCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllProductsCore.swift; sourceTree = "<group>"; };
-		DBB4862327C7004C00F384D2 /* Core.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Core.swift; sourceTree = "<group>"; };
+		DBB4862327C7004C00F384D2 /* CoreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreViewModel.swift; sourceTree = "<group>"; };
 		DBB4862927C7013900F384D2 /* PrductModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrductModel.swift; sourceTree = "<group>"; };
 		DBB4862B27C7051800F384D2 /* Products.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Products.swift; sourceTree = "<group>"; };
 		DBB4862E27C70DE400F384D2 /* StringConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringConstants.swift; sourceTree = "<group>"; };
+		DBB4863127C71AA700F384D2 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
+		DBB4863627C8033A00F384D2 /* CoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreViewController.swift; sourceTree = "<group>"; };
+		DBB4863A27C8090100F384D2 /* CoreProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreProtocols.swift; sourceTree = "<group>"; };
+		DBB4863C27C80D6500F384D2 /* WishlistViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishlistViewModel.swift; sourceTree = "<group>"; };
+		DBB4863E27C80DAF00F384D2 /* WishlistView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishlistView.swift; sourceTree = "<group>"; };
+		DBB4864127C87F6E00F384D2 /* AllProductsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllProductsCell.swift; sourceTree = "<group>"; };
+		DBB4864627C97B4600F384D2 /* WishlistCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishlistCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,11 +167,13 @@
 		DBB4860D27C6FA5800F384D2 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				DBB4862D27C70DC900F384D2 /* Constants */,
-				DBB4862527C700F900F384D2 /* Model */,
 				DBB485DC27C6F99B00F384D2 /* AppDelegate.swift */,
 				DBB485DE27C6F99B00F384D2 /* SceneDelegate.swift */,
-				DBB4862327C7004C00F384D2 /* Core.swift */,
+				DBB4864427C975C500F384D2 /* Controller */,
+				DBB4864327C975B700F384D2 /* ViewModel */,
+				DBB4863927C808F000F384D2 /* Protocols */,
+				DBB4862D27C70DC900F384D2 /* Constants */,
+				DBB4862527C700F900F384D2 /* Model */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -166,6 +182,7 @@
 			isa = PBXGroup;
 			children = (
 				DBB4861C27C6FC9800F384D2 /* WishlistCore.swift */,
+				DBB4864527C97B3600F384D2 /* Cells */,
 				DBB4861B27C6FB4800F384D2 /* ViewModels */,
 				DBB4861A27C6FB4100F384D2 /* Controllers */,
 				DBB4861927C6FB3C00F384D2 /* Views */,
@@ -177,6 +194,8 @@
 			isa = PBXGroup;
 			children = (
 				DBB4861E27C6FCAD00F384D2 /* AllProductsCore.swift */,
+				DBB4864027C87F5300F384D2 /* Cells */,
+				DBB4863027C71A9700F384D2 /* Protocols */,
 				DBB4861227C6FAF800F384D2 /* ViewModels */,
 				DBB4861127C6FAF300F384D2 /* Views */,
 				DBB4861027C6FAE900F384D2 /* Controllers */,
@@ -211,6 +230,7 @@
 		DBB4861927C6FB3C00F384D2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				DBB4863E27C80DAF00F384D2 /* WishlistView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -218,7 +238,7 @@
 		DBB4861A27C6FB4100F384D2 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				DBB485E027C6F99B00F384D2 /* ViewController.swift */,
+				DBB485E027C6F99B00F384D2 /* WishlistViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -226,6 +246,7 @@
 		DBB4861B27C6FB4800F384D2 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				DBB4863C27C80D6500F384D2 /* WishlistViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -245,6 +266,54 @@
 				DBB4862E27C70DE400F384D2 /* StringConstants.swift */,
 			);
 			path = Constants;
+			sourceTree = "<group>";
+		};
+		DBB4863027C71A9700F384D2 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				DBB4863127C71AA700F384D2 /* Protocols.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		DBB4863927C808F000F384D2 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				DBB4863A27C8090100F384D2 /* CoreProtocols.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		DBB4864027C87F5300F384D2 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				DBB4864127C87F6E00F384D2 /* AllProductsCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		DBB4864327C975B700F384D2 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				DBB4862327C7004C00F384D2 /* CoreViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		DBB4864427C975C500F384D2 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				DBB4863627C8033A00F384D2 /* CoreViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		DBB4864527C97B3600F384D2 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				DBB4864627C97B4600F384D2 /* WishlistCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -377,15 +446,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DBB4862427C7004C00F384D2 /* Core.swift in Sources */,
+				DBB4862427C7004C00F384D2 /* CoreViewModel.swift in Sources */,
 				DBB4862C27C7051800F384D2 /* Products.swift in Sources */,
 				DBB4861827C6FB3700F384D2 /* AllProductsViewModel.swift in Sources */,
-				DBB485E127C6F99B00F384D2 /* ViewController.swift in Sources */,
+				DBB485E127C6F99B00F384D2 /* WishlistViewController.swift in Sources */,
+				DBB4863727C8033A00F384D2 /* CoreViewController.swift in Sources */,
+				DBB4864727C97B4600F384D2 /* WishlistCell.swift in Sources */,
 				DBB4862A27C7013900F384D2 /* PrductModel.swift in Sources */,
 				DBB4861627C6FB2700F384D2 /* AllProductsView.swift in Sources */,
 				DBB485DD27C6F99B00F384D2 /* AppDelegate.swift in Sources */,
 				DBB4861427C6FB1A00F384D2 /* AllProductsViewController.swift in Sources */,
 				DBB4862F27C70DE400F384D2 /* StringConstants.swift in Sources */,
+				DBB4863227C71AA700F384D2 /* Protocols.swift in Sources */,
+				DBB4863B27C8090100F384D2 /* CoreProtocols.swift in Sources */,
+				DBB4863F27C80DAF00F384D2 /* WishlistView.swift in Sources */,
+				DBB4864227C87F6E00F384D2 /* AllProductsCell.swift in Sources */,
+				DBB4863D27C80D6500F384D2 /* WishlistViewModel.swift in Sources */,
 				DBB485DF27C6F99B00F384D2 /* SceneDelegate.swift in Sources */,
 				DBB4861F27C6FCAD00F384D2 /* AllProductsCore.swift in Sources */,
 				DBB4861D27C6FC9800F384D2 /* WishlistCore.swift in Sources */,

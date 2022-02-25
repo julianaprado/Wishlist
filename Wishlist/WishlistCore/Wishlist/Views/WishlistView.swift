@@ -1,23 +1,23 @@
 //
-//  AllProductsView.swift
+//  WishlistView.swift
 //  Wishlist
 //
-//  Created by Juliana Prado on 23/02/22.
+//  Created by Juliana Prado on 24/02/22.
 //
 
 import Foundation
 import UIKit
 
-class AllProductsView: UIView{
-        
+class WishlistView: UIView {
+    
     lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.minimumLineSpacing = 3.5
         layout.minimumInteritemSpacing = 3.5
         layout.scrollDirection = .vertical
         let collection = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        collection.register(AllProductsCell.self, forCellWithReuseIdentifier: AllProductsCell.identifier)
-        collection.backgroundColor = .black
+        collection.register(WishlistCell.self, forCellWithReuseIdentifier: WishlistCell.wishlistIdentifier)
+        collection.backgroundColor = .blue
         collection.showsVerticalScrollIndicator = false
         collection.translatesAutoresizingMaskIntoConstraints = false
         return collection
@@ -35,13 +35,13 @@ class AllProductsView: UIView{
     
 }
 
-extension AllProductsView: UIViewLayout {
-    
-    func setupHierarchy(){
+extension WishlistView: UIViewLayout {
+   
+    func setupHierarchy() {
         addSubview(collectionView)
     }
     
-    func setupConstraints(){
+    func setupConstraints() {
         
         NSLayoutConstraint.activate([
             collectionView.topAnchor.constraint(equalToSystemSpacingBelow: self.layoutMarginsGuide.topAnchor, multiplier: 15),
@@ -52,7 +52,8 @@ extension AllProductsView: UIViewLayout {
         
     }
     
-    func setupViews(){
+    func setupViews() {
+    
     }
     
 }
