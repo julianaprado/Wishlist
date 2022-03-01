@@ -8,7 +8,7 @@
 import Foundation
 
 /// Individual Product Struct
-struct ProductModel {
+struct ProductModel: Hashable {
     
     ///Products id
     let id: String
@@ -18,5 +18,17 @@ struct ProductModel {
     
     ///Products image
     let url: String
+    
+}
+
+/// Wishlist's folder
+struct WishlistFolder: Hashable {
+    
+    /// folder that the product belongs to
+    let folder: String
+    
+    
+    /// list of all the products that belong to the folder
+    var products: [ProductModel]
     
 }

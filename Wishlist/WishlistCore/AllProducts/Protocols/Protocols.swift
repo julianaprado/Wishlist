@@ -8,5 +8,6 @@
 import Foundation
 
 protocol UIAlertStringProtocol: AnyObject {
-    func saveProductWith(name: String)
+    func saveProductWith(name: String, index: Int)
+    func showWarning()
 }

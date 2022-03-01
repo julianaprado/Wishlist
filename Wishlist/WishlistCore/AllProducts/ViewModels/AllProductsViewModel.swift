@@ -43,7 +43,6 @@ extension AllProductsViewModel: UICollectionViewDelegateFlowLayout {
     
 }
 
-
 extension AllProductsViewModel: UICollectionViewDataSource, UIGestureRecognizerDelegate {
     
     func setupLongGestureRecognizerOnCollection() {
@@ -61,12 +60,12 @@ extension AllProductsViewModel: UICollectionViewDataSource, UIGestureRecognizerD
         
         let p = gestureRecognizer.location(in: view.collectionView)
         
-        if let indexPath = view.collectionView.indexPathForItem(at: p) {
+        if let index = view.collectionView.indexPathForItem(at: p) {
             guard let vc = viewController else {
                 return
             }
             vc.delegate = self
-            vc.showAlert()
+            vc.showAlert(index: index.row)
         }
     }
     
@@ -80,20 +79,51 @@ extension AllProductsViewModel: UICollectionViewDataSource, UIGestureRecognizerD
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AllProductsCell.identifier, for: indexPath) as! AllProductsCell
         let product = productList[indexPath.row]
-        cell.setupCellProperties(productName: product.title, image: UIImage())
+        
+        let image = product.url
+        cell.onReuse = {
+            cell.image.cancelLoadingImage()
+        }
+        cell.image.downloadWithUrlSession(at: cell, urlStr: image)
+        
+        cell.setupCellProperties(productName: product.title)
         return cell
     }
-    
 }
 
 extension AllProductsViewModel: UIAlertStringProtocol {
-    
-    func saveProductWith(name: String) {
-        products?.addToWishList(id: "1", title: name)
+    func showWarning() {
+        print()
     }
     
+    
+    func saveProductWith(name: String, index: Int){
+        if name != "" {
+            let list = name.components(separatedBy: "/")
+            let lastIndex = (list.count - 1) - 1
+            
+            if lastIndex >= 1 {
+                let folderNameList = list[0...lastIndex]
+                let folderName = folderNameList.joined(separator: "/")
+                print("1: "+folderName)
+                let productName = Array(list.suffix(1))
+                products?.addToWishList(folderName: folderName, productName: productName[0], index: index)
+            } else if lastIndex == 0{
+                products?.addToWishList(folderName: list[0], productName: list[1], index: index )
+            } else {
+                products?.addToWishList(folderName: list[0], productName: list[0], index: index)
+            }
+        } else {
+                guard let vc = viewController else {
+                    return
+                }
+                vc.delegate = self
+            vc.showWarning()
+        }
+    }
 }
 
 extension AllProductsViewModel: wishlistButttonProtocol {

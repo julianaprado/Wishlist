@@ -12,7 +12,6 @@ public final class Core: CoreProtocol{
 
     let products = Products()
 
-    
     public func coreSetup(nav: UINavigationController) {
         let allProductsModule = AllProductsCore()
         allProductsModule.showAllProducts(nav: nav, products: products)

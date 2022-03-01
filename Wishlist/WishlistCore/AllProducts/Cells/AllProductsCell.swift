@@ -24,12 +24,14 @@ class AllProductsCell: UICollectionViewCell {
         return label
     }()
     
-    fileprivate lazy var image: UIImageView = {
-        let image = UIImageView()
+    lazy var image: DownloadableImageView = {
+        let image = DownloadableImageView()
         image.translatesAutoresizingMaskIntoConstraints = false
         return image
     }()
     
+    var onReuse: () -> Void = {}
+
     //MARK: - Initializers
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -39,6 +41,13 @@ class AllProductsCell: UICollectionViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    override func prepareForReuse() {
+      super.prepareForReuse()
+      onReuse()
+      image.image = nil
+    }
+    
 }
 
 extension AllProductsCell: UIViewLayout{
@@ -71,9 +80,8 @@ extension AllProductsCell: UIViewLayout{
 
 extension AllProductsCell {
     
-    func setupCellProperties(productName: String, image: UIImage){
+    func setupCellProperties(productName: String){
         self.productName.text = productName
-        self.image.image = image
     }
     
 }

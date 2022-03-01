@@ -24,6 +24,14 @@ class WishlistCell: UICollectionViewCell {
         return label
     }()
     
+     lazy var image: DownloadableImageView = {
+        let image = DownloadableImageView()
+        image.translatesAutoresizingMaskIntoConstraints = false
+        return image
+    }()
+    
+    var onReuse: () -> Void = {}
+    
     //MARK: - Initializers
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -34,31 +42,37 @@ class WishlistCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    override func prepareForReuse() {
+      super.prepareForReuse()
+      onReuse()
+      image.image = nil
+    }
+    
 }
 
 extension WishlistCell: UIViewLayout{
     
     func setupHierarchy() {
         addSubview(productName)
-//        addSubview(image)
+        addSubview(image)
     }
     
     func setupConstraints() {
         NSLayoutConstraint.activate([
-//            image.rightAnchor.constraint(equalTo: self.rightAnchor),
-//            image.centerYAnchor.constraint(equalTo: self.centerYAnchor),
-//            image.widthAnchor.constraint(equalTo: self.heightAnchor),
-//            image.heightAnchor.constraint(equalTo: self.heightAnchor),
+            image.rightAnchor.constraint(equalTo: self.rightAnchor),
+            image.centerYAnchor.constraint(equalTo: self.centerYAnchor),
+            image.widthAnchor.constraint(equalTo: self.heightAnchor, constant: -3),
+            image.heightAnchor.constraint(equalTo: self.heightAnchor, constant: -3),
             
             productName.leftAnchor.constraint(equalTo: self.leftAnchor),
             productName.centerYAnchor.constraint(equalTo: self.centerYAnchor),
-//            productName.rightAnchor.constraint(equalTo: image.leftAnchor, constant: -20),
+            productName.rightAnchor.constraint(equalTo: image.leftAnchor, constant: -20),
             
         ])
     }
     
     func setupViews() {
-        self.backgroundColor = .gray
+        self.backgroundColor = .clear
         self.clipsToBounds = true
     }
     
@@ -66,9 +80,8 @@ extension WishlistCell: UIViewLayout{
 
 extension WishlistCell {
     
-    func setupCellProperties(productName: String, image: UIImage){
+    func setupCellProperties(productName: String) {
         self.productName.text = productName
-//        self.image.image = image
     }
     
 }

@@ -22,10 +22,16 @@ public class CoreViewController: UIViewController {
         
         setupNavbar(nav: nv)
     
+        
         if shouldHaveWishlistButton {
+            
             setupWishlistButton()
         }
         
+    }
+    
+    public override func viewDidLoad() {
+        super.viewDidLoad()
     }
 
     func setupNavbar(nav: UINavigationController) {
@@ -36,6 +42,12 @@ public class CoreViewController: UIViewController {
         nav.navigationBar.standardAppearance = appearance
         nav.navigationBar.isTranslucent = false
         nav.navigationBar.tintColor = .gray
+        
+        let yourBackImage = UIImage(systemName: "arrow.left")
+        nav.navigationItem.leftBarButtonItem?.image = yourBackImage
+        nav.navigationBar.backIndicatorTransitionMaskImage = yourBackImage
+        nav.navigationBar.backItem?.title = ""
+
     }
     
     func setupWishlistButton(){
@@ -47,11 +59,10 @@ public class CoreViewController: UIViewController {
         guard let nv = self.navigationController else {
             return
         }
-        guard let product = wishlistButtonDelegate?.wishlistClicked() else {
-            return
-        }
-        let wishlistModule = WishlistCore()
-        wishlistModule.showWishlist(nav: nv, products: product)
+        nv.navigationItem.hidesBackButton = true
+        weak var product = (wishlistButtonDelegate?.wishlistClicked())!
+        let wishlist = WishlistCore()
+        wishlist.showWishlist(nav: nv, products: product!)
     }
     
 }

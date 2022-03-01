@@ -47,9 +47,23 @@ class AllProductsViewController: CoreViewController {
 //MARK: - UIAlert Extension
 extension AllProductsViewController {
     
-    public func showAlert(){
+    public func showWarning(){
+        let alert = UIAlertController(title: "Unable to Save", message: "Plase write the folder and the product name.", preferredStyle: .alert)
+        
+        let action = UIAlertAction(title: "Ok", style: .default)
+        
+        alert.addAction(action)
+        
+        self.present(alert, animated: true) {
+            let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.dismissAlertController))
+            alert.view.superview?.subviews[0].addGestureRecognizer(tapGesture)
+        }
+    }
+    
+    public func showAlert(index: Int){
        
         let alert = UIAlertController(title: "Save to wishlist", message: nil, preferredStyle: .alert)
+        
         
         alert.addTextField(configurationHandler:  { (textField) -> Void in
             textField.placeholder = "Custom Name"
@@ -57,7 +71,7 @@ extension AllProductsViewController {
     
         let action = UIAlertAction(title: "Save", style: .default) { (_) in
             let textField = alert.textFields![0]
-            self.delegate?.saveProductWith(name: String(describing: textField.text))
+            self.delegate?.saveProductWith(name: String(describing: textField.text!), index: index)
         }
         
         alert.addAction(action)

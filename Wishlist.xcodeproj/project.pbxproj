@@ -31,6 +31,8 @@
 		DBB4863F27C80DAF00F384D2 /* WishlistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB4863E27C80DAF00F384D2 /* WishlistView.swift */; };
 		DBB4864227C87F6E00F384D2 /* AllProductsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB4864127C87F6E00F384D2 /* AllProductsCell.swift */; };
 		DBB4864727C97B4600F384D2 /* WishlistCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB4864627C97B4600F384D2 /* WishlistCell.swift */; };
+		DBB4864A27C9C6ED00F384D2 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB4864927C9C6ED00F384D2 /* Enums.swift */; };
+		DBB4864E27CC6A1400F384D2 /* LoadImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB4864D27CC6A1400F384D2 /* LoadImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +81,8 @@
 		DBB4863E27C80DAF00F384D2 /* WishlistView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishlistView.swift; sourceTree = "<group>"; };
 		DBB4864127C87F6E00F384D2 /* AllProductsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllProductsCell.swift; sourceTree = "<group>"; };
 		DBB4864627C97B4600F384D2 /* WishlistCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishlistCell.swift; sourceTree = "<group>"; };
+		DBB4864927C9C6ED00F384D2 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
+		DBB4864D27CC6A1400F384D2 /* LoadImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +173,7 @@
 			children = (
 				DBB485DC27C6F99B00F384D2 /* AppDelegate.swift */,
 				DBB485DE27C6F99B00F384D2 /* SceneDelegate.swift */,
+				DBB4864827C9C6CF00F384D2 /* Enums */,
 				DBB4864427C975C500F384D2 /* Controller */,
 				DBB4864327C975B700F384D2 /* ViewModel */,
 				DBB4863927C808F000F384D2 /* Protocols */,
@@ -256,6 +261,7 @@
 			children = (
 				DBB4862927C7013900F384D2 /* PrductModel.swift */,
 				DBB4862B27C7051800F384D2 /* Products.swift */,
+				DBB4864D27CC6A1400F384D2 /* LoadImage.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -314,6 +320,14 @@
 				DBB4864627C97B4600F384D2 /* WishlistCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		DBB4864827C9C6CF00F384D2 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				DBB4864927C9C6ED00F384D2 /* Enums.swift */,
+			);
+			path = Enums;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -458,8 +472,10 @@
 				DBB4861427C6FB1A00F384D2 /* AllProductsViewController.swift in Sources */,
 				DBB4862F27C70DE400F384D2 /* StringConstants.swift in Sources */,
 				DBB4863227C71AA700F384D2 /* Protocols.swift in Sources */,
+				DBB4864A27C9C6ED00F384D2 /* Enums.swift in Sources */,
 				DBB4863B27C8090100F384D2 /* CoreProtocols.swift in Sources */,
 				DBB4863F27C80DAF00F384D2 /* WishlistView.swift in Sources */,
+				DBB4864E27CC6A1400F384D2 /* LoadImage.swift in Sources */,
 				DBB4864227C87F6E00F384D2 /* AllProductsCell.swift in Sources */,
 				DBB4863D27C80D6500F384D2 /* WishlistViewModel.swift in Sources */,
 				DBB485DF27C6F99B00F384D2 /* SceneDelegate.swift in Sources */,

@@ -11,13 +11,14 @@ import UIKit
 class WishlistView: UIView {
     
     lazy var collectionView: UICollectionView = {
-        let layout = UICollectionViewFlowLayout()
-        layout.minimumLineSpacing = 3.5
-        layout.minimumInteritemSpacing = 3.5
-        layout.scrollDirection = .vertical
+        var layoutConfig = UICollectionLayoutListConfiguration(appearance: .plain)
+        layoutConfig.itemSeparatorHandler = .none
+        layoutConfig.showsSeparators = false
+        let layout = UICollectionViewCompositionalLayout.list(using: layoutConfig)
+
         let collection = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collection.register(WishlistCell.self, forCellWithReuseIdentifier: WishlistCell.wishlistIdentifier)
-        collection.backgroundColor = .blue
+        collection.backgroundColor = .black
         collection.showsVerticalScrollIndicator = false
         collection.translatesAutoresizingMaskIntoConstraints = false
         return collection
@@ -47,13 +48,12 @@ extension WishlistView: UIViewLayout {
             collectionView.topAnchor.constraint(equalToSystemSpacingBelow: self.layoutMarginsGuide.topAnchor, multiplier: 15),
             collectionView.trailingAnchor.constraint(equalTo: self.layoutMarginsGuide.trailingAnchor),
             collectionView.bottomAnchor.constraint(equalTo: self.layoutMarginsGuide.bottomAnchor),
-            collectionView.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.5)
+            collectionView.widthAnchor.constraint(equalTo: self.layoutMarginsGuide.widthAnchor),
         ])
         
     }
     
     func setupViews() {
-    
     }
     
 }
