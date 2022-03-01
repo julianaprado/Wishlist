@@ -30,6 +30,10 @@ public class CoreViewController: UIViewController {
         ///setup navbar if wishlist button is ture
         if shouldHaveWishlistButton {
             setupWishlistButton()
+        } else {
+            ///Back Button Setup
+            nv.navigationBar.topItem!.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "arrow.backward"), style: .plain, target: self, action: #selector(leftBarButtonItemTapped))
+            nv.navigationItem.leftBarButtonItem?.tintColor = .gray
         }
     
     }
@@ -48,11 +52,7 @@ public class CoreViewController: UIViewController {
         nav.navigationBar.tintColor = .gray
         
         ///Back Button Setup
-        let yourBackImage = UIImage(systemName: "arrow.left")
-        nav.navigationItem.leftBarButtonItem?.image = yourBackImage
-        nav.navigationBar.backIndicatorTransitionMaskImage = yourBackImage
-        nav.navigationBar.backItem?.title = ""
-
+        nav.navigationItem.setHidesBackButton(true, animated: true)
     }
     
     /// Setup Wishlist Button
@@ -71,6 +71,15 @@ public class CoreViewController: UIViewController {
         weak var product = (wishlistButtonDelegate?.wishlistClicked())!
         let wishlist = WishlistCore()
         wishlist.showWishlist(nav: nv, products: product!)
+    }
+    
+    /// WIshlist button action
+    /// - Parameter sender: UIBarButtonItem
+    @objc func leftBarButtonItemTapped(_ sender: UIBarButtonItem){
+        guard let nv = self.navigationController else {
+            return
+        }
+        nv.popViewController(animated: false)
     }
     
 }
