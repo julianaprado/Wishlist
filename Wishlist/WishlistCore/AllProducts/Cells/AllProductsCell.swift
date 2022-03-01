@@ -12,7 +12,7 @@ import UIKit
 class AllProductsCell: UICollectionViewCell {
     
     //MARK: - Properties
-    static let identifier = "cell"
+    static let identifier = StringConstants.allProductsCellIdentifier
     
     //MARK: - View Components
     ///Product name label

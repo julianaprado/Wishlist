@@ -52,9 +52,9 @@ extension AllProductsViewController {
     
     /// Show Warning if user inputed empty string
     public func showWarning(){
-        let alert = UIAlertController(title: "Unable to Save", message: "Plase write the folder and the product name.", preferredStyle: .alert)
+        let alert = UIAlertController(title: StringConstants.warningTitle, message: StringConstants.warningMessage, preferredStyle: .alert)
         
-        let action = UIAlertAction(title: "Ok", style: .default)
+        let action = UIAlertAction(title: StringConstants.warningAction, style: .default)
         
         alert.addAction(action)
         
@@ -68,15 +68,15 @@ extension AllProductsViewController {
     /// - Parameter index: cell index
     public func showAlert(index: Int){
     
-        let alert = UIAlertController(title: "Save to wishlist", message: nil, preferredStyle: .alert)
+        let alert = UIAlertController(title: StringConstants.alertTitle, message: nil, preferredStyle: .alert)
         
         ///textfield
         alert.addTextField(configurationHandler:  { (textField) -> Void in
-            textField.placeholder = "Custom Name"
+            textField.placeholder = StringConstants.alertPlaceHolder
         })
         
         ///save action and completion
-        let action = UIAlertAction(title: "Save", style: .default) { (_) in
+        let action = UIAlertAction(title: StringConstants.alertActionTitle, style: .default) { (_) in
             let textField = alert.textFields![0]
             self.delegate?.saveProductWith(name: String(describing: textField.text!), index: index)
         }

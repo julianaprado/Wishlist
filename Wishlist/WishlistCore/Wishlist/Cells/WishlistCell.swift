@@ -12,7 +12,7 @@ import UIKit
 class WishlistCell: UICollectionViewCell {
     
     //MARK: - Properties
-    static let wishlistIdentifier = "cell"
+    static let wishlistIdentifier = StringConstants.wishlistIdentifier
     
     //MARK: - View Components
     ///Product name label
