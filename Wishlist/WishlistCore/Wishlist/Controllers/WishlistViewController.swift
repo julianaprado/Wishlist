@@ -7,11 +7,17 @@
 
 import UIKit
 
+/// Wishlist View Controller
 class WishlistViewController: CoreViewController {
 
+    //MARK: - Properties
+    ///Wishlist View Controller View Model
     fileprivate var viewModel: WishlistViewModel?
+    
+    ///Products
     fileprivate var products: Products?
     
+    //MARK: - Initializers
     init(products: Products){
         self.products = products
         super.init(nibName: nil, bundle: nil)
@@ -22,7 +28,7 @@ class WishlistViewController: CoreViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    //MARK: - View LifeCy
+    //MARK: - View LifeCycle
     override func loadView() {
         guard let model = viewModel else {
             return

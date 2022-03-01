@@ -27,7 +27,6 @@ struct WishlistFolder: Hashable {
     /// folder that the product belongs to
     let folder: String
     
-    
     /// list of all the products that belong to the folder
     var products: [ProductModel]
     

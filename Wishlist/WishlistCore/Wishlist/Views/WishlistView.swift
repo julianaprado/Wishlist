@@ -8,14 +8,16 @@
 import Foundation
 import UIKit
 
+/// Wishlist View
 class WishlistView: UIView {
     
+    //MARK: - View Components
     lazy var collectionView: UICollectionView = {
         var layoutConfig = UICollectionLayoutListConfiguration(appearance: .plain)
         layoutConfig.itemSeparatorHandler = .none
         layoutConfig.showsSeparators = false
         let layout = UICollectionViewCompositionalLayout.list(using: layoutConfig)
-
+        
         let collection = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collection.register(WishlistCell.self, forCellWithReuseIdentifier: WishlistCell.wishlistIdentifier)
         collection.backgroundColor = .black
@@ -24,6 +26,7 @@ class WishlistView: UIView {
         return collection
     }()
     
+    //MARK: - Initializers
     override init(frame: CGRect) {
         super.init(frame: frame)
         backgroundColor = .black
@@ -36,8 +39,9 @@ class WishlistView: UIView {
     
 }
 
+//MARK: - UIViewLayout
 extension WishlistView: UIViewLayout {
-   
+    
     func setupHierarchy() {
         addSubview(collectionView)
     }

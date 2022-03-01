@@ -8,11 +8,14 @@
 import Foundation
 import UIKit
 
+/// Products Cell: Custom Collection View Cell
 class AllProductsCell: UICollectionViewCell {
     
     //MARK: - Properties
     static let identifier = "cell"
     
+    //MARK: - View Components
+    ///Product name label
     fileprivate lazy var productName: UILabel = {
         let label = UILabel()
         label.textColor = .gray
@@ -24,12 +27,14 @@ class AllProductsCell: UICollectionViewCell {
         return label
     }()
     
+    ///product image
     lazy var image: DownloadableImageView = {
         let image = DownloadableImageView()
         image.translatesAutoresizingMaskIntoConstraints = false
         return image
     }()
     
+    ///Function called inside prepare for reuse
     var onReuse: () -> Void = {}
 
     //MARK: - Initializers
@@ -42,6 +47,7 @@ class AllProductsCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    //MARK: - Collection View Delegate Function
     override func prepareForReuse() {
       super.prepareForReuse()
       onReuse()
@@ -50,6 +56,7 @@ class AllProductsCell: UICollectionViewCell {
     
 }
 
+//MARK: - View Layout Protocol
 extension AllProductsCell: UIViewLayout{
     
     func setupHierarchy() {
@@ -78,8 +85,11 @@ extension AllProductsCell: UIViewLayout{
     
 }
 
+//MARK: - Setup Cell Properties
 extension AllProductsCell {
     
+    /// Setup Cell Properties
+    /// - Parameter productName: Product Name Text
     func setupCellProperties(productName: String){
         self.productName.text = productName
     }

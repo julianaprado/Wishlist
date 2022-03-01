@@ -12,7 +12,10 @@ import UIKit
 class AllProductsViewController: CoreViewController {
     
     //MARK: - Properties
+    ///Wishlist View Controller View Model
     fileprivate var viewModel: AllProductsViewModel?
+    
+    ///Products
     weak var delegate: UIAlertStringProtocol?
     
     //MARK: - Initializers
@@ -47,6 +50,7 @@ class AllProductsViewController: CoreViewController {
 //MARK: - UIAlert Extension
 extension AllProductsViewController {
     
+    /// Show Warning if user inputed empty string
     public func showWarning(){
         let alert = UIAlertController(title: "Unable to Save", message: "Plase write the folder and the product name.", preferredStyle: .alert)
         
@@ -60,28 +64,34 @@ extension AllProductsViewController {
         }
     }
     
+    /// Show Alert to ask for user input
+    /// - Parameter index: cell index
     public func showAlert(index: Int){
-       
+    
         let alert = UIAlertController(title: "Save to wishlist", message: nil, preferredStyle: .alert)
         
-        
+        ///textfield
         alert.addTextField(configurationHandler:  { (textField) -> Void in
             textField.placeholder = "Custom Name"
         })
-    
+        
+        ///save action and completion
         let action = UIAlertAction(title: "Save", style: .default) { (_) in
             let textField = alert.textFields![0]
             self.delegate?.saveProductWith(name: String(describing: textField.text!), index: index)
         }
         
+        ///add action
         alert.addAction(action)
-    
+        
+        ///tap gesture outside alert bounds
         self.present(alert, animated: true) {
             let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.dismissAlertController))
             alert.view.superview?.subviews[0].addGestureRecognizer(tapGesture)
         }
     }
     
+    /// Dismiss Alert if user clicked outside the alert
     @objc func dismissAlertController(){
         self.dismiss(animated: true, completion: nil)
     }

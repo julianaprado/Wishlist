@@ -8,11 +8,14 @@
 import Foundation
 import UIKit
 
+/// Wishlist Cell: Custom Collection View Cell
 class WishlistCell: UICollectionViewCell {
     
     //MARK: - Properties
     static let wishlistIdentifier = "cell"
     
+    //MARK: - View Components
+    ///Product name label
     fileprivate lazy var productName: UILabel = {
         let label = UILabel()
         label.textColor = .gray
@@ -24,12 +27,14 @@ class WishlistCell: UICollectionViewCell {
         return label
     }()
     
+    ///product image
      lazy var image: DownloadableImageView = {
         let image = DownloadableImageView()
         image.translatesAutoresizingMaskIntoConstraints = false
         return image
     }()
     
+    ///Function called inside prepare for reuse
     var onReuse: () -> Void = {}
     
     //MARK: - Initializers
@@ -42,6 +47,7 @@ class WishlistCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    //MARK: - Collection View Delegate Function
     override func prepareForReuse() {
       super.prepareForReuse()
       onReuse()
@@ -50,6 +56,7 @@ class WishlistCell: UICollectionViewCell {
     
 }
 
+//MARK: - View Layout Protocol
 extension WishlistCell: UIViewLayout{
     
     func setupHierarchy() {
@@ -78,8 +85,11 @@ extension WishlistCell: UIViewLayout{
     
 }
 
+//MARK: - Setup Cell Properties
 extension WishlistCell {
     
+    /// Setup Cell Properties
+    /// - Parameter productName: Product Name Text
     func setupCellProperties(productName: String) {
         self.productName.text = productName
     }

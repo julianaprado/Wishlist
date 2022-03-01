@@ -7,7 +7,9 @@
 
 import Foundation
 
+/// Struct with the main Strings
 struct StringConstants{
     static let allProductsViewNavigationTitle = "All Products"
     static let wishlistNavigationTitle = "Wishlist"
+    static let imageUrl = "https://via.placeholder.com/150"
 }

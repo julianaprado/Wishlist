@@ -8,12 +8,20 @@
 import Foundation
 import UIKit
 
+// All Products View Model of:
+/// All Products View Controller
 class AllProductsViewModel: NSObject {
     
     /// View that will be shown by the view controller
     private let view = AllProductsView()
+    
+    /// list of products
     private var products: Products?
+    
+    /// Products List
     private var productList: [ProductModel] = []
+    
+    ///View Controller
     private let viewController: AllProductsViewController?
     
     /// Get AllProductsViewModel's Main View
@@ -22,29 +30,39 @@ class AllProductsViewModel: NSObject {
         return self.view
     }
     
+    
+    /// Get Navigation Title
+    /// - Returns: String containing the title to be displayed on the navigation bar
     public func getNavigationTitle() -> String{
         return StringConstants.allProductsViewNavigationTitle
     }
     
+    //MARK: - Initializer
     init(product: Products, viewController vc: AllProductsViewController) {
+        
         self.products = product
         self.productList = product.getProducts()
         self.viewController = vc
+        
         super.init()
+        
         vc.wishlistButtonDelegate = self
         view.collectionView.delegate = self
         view.collectionView.dataSource = self
+        
         setupLongGestureRecognizerOnCollection()
     }
     
 }
 
+//MARK: - UICollectionViewDelegateFlowLayout
 extension AllProductsViewModel: UICollectionViewDelegateFlowLayout {
-    
 }
 
+//MARK: - UICollectionViewDataSource,UIGestureRecognizerDelegate
 extension AllProductsViewModel: UICollectionViewDataSource, UIGestureRecognizerDelegate {
     
+    /// Setup Long Gesture Recognizer
     func setupLongGestureRecognizerOnCollection() {
         let longPressedGesture = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPress(gestureRecognizer:)))
         longPressedGesture.minimumPressDuration = 0.3
@@ -53,6 +71,8 @@ extension AllProductsViewModel: UICollectionViewDataSource, UIGestureRecognizerD
         view.collectionView.addGestureRecognizer(longPressedGesture)
     }
     
+    /// Handle Long Press
+    /// - Parameter gestureRecognizer: UILongPressGestureRecognizer
     @objc func handleLongPress(gestureRecognizer: UILongPressGestureRecognizer) {
         if (gestureRecognizer.state != .began) {
             return
@@ -94,13 +114,16 @@ extension AllProductsViewModel: UICollectionViewDataSource, UIGestureRecognizerD
     }
 }
 
+/////MARK: - UIAlertStringProtocol
 extension AllProductsViewModel: UIAlertStringProtocol {
-    func showWarning() {
-        print()
-    }
     
-    
+    /// Save Products With Folder Name and Product Name
+    /// - Parameters:
+    ///   - name: Name inputed by the user
+    ///   - index: product index
     func saveProductWith(name: String, index: Int){
+        
+        ///if user inputed the name
         if name != "" {
             let list = name.components(separatedBy: "/")
             let lastIndex = (list.count - 1) - 1
@@ -116,18 +139,23 @@ extension AllProductsViewModel: UIAlertStringProtocol {
             } else {
                 products?.addToWishList(folderName: list[0], productName: list[0], index: index)
             }
-        } else {
-                guard let vc = viewController else {
-                    return
-                }
-                vc.delegate = self
+        
+        } ///if user inputed an empty string call ui alert
+        else {
+            guard let vc = viewController else {
+                return
+            }
+            vc.delegate = self
             vc.showWarning()
         }
     }
 }
 
+//MARK: - wishlistButttonProtocol
 extension AllProductsViewModel: wishlistButttonProtocol {
-   
+    
+    /// Wish List Button clicked
+    /// - Returns: Products
     func wishlistClicked() -> Products {
         guard let pd = products else {
             return Products()

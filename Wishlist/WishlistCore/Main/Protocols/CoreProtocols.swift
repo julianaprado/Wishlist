@@ -20,14 +20,13 @@ public protocol UIViewLayout {
     func setupViews()
 }
 
+/// Extention of UIViewLayout
 extension UIViewLayout {
-    
     func configureView(){
         setupHierarchy()
         setupConstraints()
         setupViews()
     }
-    
 }
 
 //MARK: - Wishlist Protocol

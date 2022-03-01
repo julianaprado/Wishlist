@@ -8,8 +8,10 @@
 import Foundation
 import UIKit
 
+/// All Products View
 class AllProductsView: UIView{
-        
+    
+    //MARK: - View Components
     lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.minimumLineSpacing = 3.5
@@ -23,6 +25,7 @@ class AllProductsView: UIView{
         return collection
     }()
     
+    //MARK: - Initializers
     override init(frame: CGRect) {
         super.init(frame: frame)
         backgroundColor = .black
@@ -35,6 +38,7 @@ class AllProductsView: UIView{
     
 }
 
+//MARK: - UIViewLayout
 extension AllProductsView: UIViewLayout {
     
     func setupHierarchy(){

@@ -7,13 +7,16 @@
 
 import Foundation
 
-enum WishlistItemEnum: Hashable {
 
+/// Wishlist Enum Diffable Data Source
+/// Folder: Expandable Header
+/// Product list: List Cells
+enum WishlistItemEnum: Hashable {
     case folder(WishlistFolder)
     case productList(ProductModel)
-    
 }
 
+/// Main Section of the
 enum Section {
     case main
 }
