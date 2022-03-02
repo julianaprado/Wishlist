@@ -31,13 +31,12 @@ public class CoreViewController: UIViewController {
         if shouldHaveWishlistButton {
             setupWishlistButton()
         } else {
-            ///Back Button Setup
-            nv.navigationBar.topItem!.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "arrow.backward"), style: .plain, target: self, action: #selector(leftBarButtonItemTapped))
-            nv.navigationItem.leftBarButtonItem?.tintColor = .gray
+            setupBackButton(nav: nv)
         }
     
     }
     
+    //MARK: - Customizing Navbar
     /// Setup Navbar
     /// - Parameter nav: Navigation Controller
     func setupNavbar(nav: UINavigationController) {
@@ -55,12 +54,26 @@ public class CoreViewController: UIViewController {
         nav.navigationItem.setHidesBackButton(true, animated: true)
     }
     
-    /// Setup Wishlist Button
-    func setupWishlistButton(){
-        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "text.badge.plus"), style: .plain, target: self, action: #selector(rightBarButtonItemTapped))
-        navigationItem.rightBarButtonItem?.tintColor = .gray
+    /// Setup Back Button
+    /// - Parameter nav: UINavigationController
+    func setupBackButton(nav: UINavigationController){
+        ///Back Button Setup
+        nav.navigationBar.topItem!.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "arrow.backward"), style: .plain, target: self, action: #selector(leftBarButtonItemTapped))
+        nav.navigationItem.leftBarButtonItem?.tintColor = .gray
     }
     
+    /// Setup Wishlist Button
+    func setupWishlistButton(nav: UINavigationController){
+        nav.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "text.badge.plus"), style: .plain, target: self, action: #selector(rightBarButtonItemTapped))
+        nav.navigationItem.rightBarButtonItem?.tintColor = .gray
+    }
+    
+    func setupSearchIcon(nav: UINavigationController){
+        nav.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "text.badge.plus"), style: .plain, target: self, action: #selector(rightBarButtonItemTapped))
+        nav.navigationItem.rightBarButtonItem?.tintColor = .gray
+    }
+    
+    //MARK: - Selector Functions
     /// WIshlist button action
     /// - Parameter sender: UIBarButtonItem
     @objc func rightBarButtonItemTapped(_ sender: UIBarButtonItem){
