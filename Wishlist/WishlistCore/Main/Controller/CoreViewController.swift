@@ -16,7 +16,7 @@ public class CoreViewController: UIViewController {
 
     /// Wishlist button delegate
     weak var wishlistButtonDelegate: wishlistButttonProtocol?
-    
+        
     public override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -32,6 +32,7 @@ public class CoreViewController: UIViewController {
             setupWishlistButton()
         } else {
             setupBackButton(nav: nv)
+            setupSearchIcon()
         }
     
     }
@@ -63,14 +64,15 @@ public class CoreViewController: UIViewController {
     }
     
     /// Setup Wishlist Button
-    func setupWishlistButton(nav: UINavigationController){
-        nav.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "text.badge.plus"), style: .plain, target: self, action: #selector(rightBarButtonItemTapped))
-        nav.navigationItem.rightBarButtonItem?.tintColor = .gray
+    func setupWishlistButton(){
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "text.badge.plus"), style: .plain, target: self, action: #selector(rightBarButtonItemTapped))
+        navigationItem.rightBarButtonItem?.tintColor = .gray
     }
     
-    func setupSearchIcon(nav: UINavigationController){
-        nav.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "text.badge.plus"), style: .plain, target: self, action: #selector(rightBarButtonItemTapped))
-        nav.navigationItem.rightBarButtonItem?.tintColor = .gray
+    /// Setup Search Icon
+    func setupSearchIcon(){
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "magnifyingglass"), style: .plain, target: self, action: #selector(searchButtonItemTapped))
+        navigationItem.rightBarButtonItem?.tintColor = .gray
     }
     
     //MARK: - Selector Functions
@@ -93,6 +95,14 @@ public class CoreViewController: UIViewController {
             return
         }
         nv.popViewController(animated: false)
+    }
+    
+    /// Search button action
+    /// - Parameter sender: UIBarButtonItem
+    @objc func searchButtonItemTapped(_ sender: UIBarButtonItem){
+
+        let searchController = UISearchController()
+        navigationItem.searchController = searchController
     }
     
 }
