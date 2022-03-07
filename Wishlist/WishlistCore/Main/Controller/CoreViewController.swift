@@ -16,7 +16,11 @@ public class CoreViewController: UIViewController {
 
     /// Wishlist button delegate
     weak var wishlistButtonDelegate: wishlistButttonProtocol?
-        
+    
+    var didTapSearchIcon = false
+    
+    let searchBar = UISearchBar()
+    
     public override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -53,6 +57,10 @@ public class CoreViewController: UIViewController {
         
         ///Back Button Setup
         nav.navigationItem.setHidesBackButton(true, animated: true)
+        
+        ///Search Bar
+        searchBar.sizeToFit()
+        
     }
     
     /// Setup Back Button
@@ -100,9 +108,20 @@ public class CoreViewController: UIViewController {
     /// Search button action
     /// - Parameter sender: UIBarButtonItem
     @objc func searchButtonItemTapped(_ sender: UIBarButtonItem){
+            navigationItem.setHidesBackButton(true, animated: true)
 
-        let searchController = UISearchController()
-        navigationItem.searchController = searchController
+            navigationItem.titleView = searchBar
+            navigationItem.rightBarButtonItem = nil
+            navigationItem.leftBarButtonItem = nil
+            searchBar.showsCancelButton = true
+            searchBar.becomeFirstResponder()
+
     }
     
+   public func cancelButtonClicked() {
+        setupBackButton(nav: self.navigationController!)
+        navigationItem.titleView = nil
+        setupSearchIcon()
+    }
+   
 }

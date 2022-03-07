@@ -33,6 +33,8 @@
 		DBB4864727C97B4600F384D2 /* WishlistCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB4864627C97B4600F384D2 /* WishlistCell.swift */; };
 		DBB4864A27C9C6ED00F384D2 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB4864927C9C6ED00F384D2 /* Enums.swift */; };
 		DBB4864E27CC6A1400F384D2 /* LoadImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB4864D27CC6A1400F384D2 /* LoadImage.swift */; };
+		DBDCFD3627D68BF7003A8512 /* WishlistViewModel_SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDCFD3527D68BF7003A8512 /* WishlistViewModel_SearchBar.swift */; };
+		DBDCFD3827D68C15003A8512 /* WishlistViewModel_DiffableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDCFD3727D68C15003A8512 /* WishlistViewModel_DiffableDataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +85,8 @@
 		DBB4864627C97B4600F384D2 /* WishlistCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishlistCell.swift; sourceTree = "<group>"; };
 		DBB4864927C9C6ED00F384D2 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		DBB4864D27CC6A1400F384D2 /* LoadImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadImage.swift; sourceTree = "<group>"; };
+		DBDCFD3527D68BF7003A8512 /* WishlistViewModel_SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishlistViewModel_SearchBar.swift; sourceTree = "<group>"; };
+		DBDCFD3727D68C15003A8512 /* WishlistViewModel_DiffableDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishlistViewModel_DiffableDataSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -252,6 +256,8 @@
 			isa = PBXGroup;
 			children = (
 				DBB4863C27C80D6500F384D2 /* WishlistViewModel.swift */,
+				DBDCFD3727D68C15003A8512 /* WishlistViewModel_DiffableDataSource.swift */,
+				DBDCFD3527D68BF7003A8512 /* WishlistViewModel_SearchBar.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -476,7 +482,9 @@
 				DBB4863B27C8090100F384D2 /* CoreProtocols.swift in Sources */,
 				DBB4863F27C80DAF00F384D2 /* WishlistView.swift in Sources */,
 				DBB4864E27CC6A1400F384D2 /* LoadImage.swift in Sources */,
+				DBDCFD3827D68C15003A8512 /* WishlistViewModel_DiffableDataSource.swift in Sources */,
 				DBB4864227C87F6E00F384D2 /* AllProductsCell.swift in Sources */,
+				DBDCFD3627D68BF7003A8512 /* WishlistViewModel_SearchBar.swift in Sources */,
 				DBB4863D27C80D6500F384D2 /* WishlistViewModel.swift in Sources */,
 				DBB485DF27C6F99B00F384D2 /* SceneDelegate.swift in Sources */,
 				DBB4861F27C6FCAD00F384D2 /* AllProductsCore.swift in Sources */,

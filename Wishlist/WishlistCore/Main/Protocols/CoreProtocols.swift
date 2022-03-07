@@ -14,7 +14,7 @@ public protocol CoreProtocol: AnyObject {
 }
 
 //MARK: - UIViewLayout
-public protocol UIViewLayout {
+public protocol UIViewLayout: AnyObject {
     func setupHierarchy()
     func setupConstraints()
     func setupViews()

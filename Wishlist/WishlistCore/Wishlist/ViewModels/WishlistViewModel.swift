@@ -14,6 +14,8 @@ import UIKit
 class WishlistViewModel: NSObject {
     
     //MARK: - Properties
+    private var viewController: WishlistViewController?
+    
     /// View that will be shown by the view controller
     private let view = WishlistView()
     
@@ -25,6 +27,8 @@ class WishlistViewModel: NSObject {
     
     /// Collection View Diffable Datasource
     lazy var dataSource = setupDifferableDataSource()
+        
+    private var searchResults:[WishlistFolder] = []
     
     //MARK: - View Controller Properties
     /// Get AllProductsViewModel's Main View
@@ -40,11 +44,14 @@ class WishlistViewModel: NSObject {
     }
     
     //MARK: - Initializer
-    init(products: Products){
+    init(viewController: WishlistViewController, products: Products){
         self.products = products
         self.wishlistAllItems = products.getWishlist()
+        self.viewController = viewController
         super.init()
-                
+        
+        self.viewController?.searchBar.delegate = self
+
         /// Snapshot Data Source
         var dataSourceSnapshot = NSDiffableDataSourceSnapshot<Section,WishlistItemEnum>()
         
@@ -72,6 +79,7 @@ class WishlistViewModel: NSObject {
         }
     }
 }
+
 
 //MARK: - Diffable Data Source
 extension WishlistViewModel {
@@ -142,3 +150,19 @@ extension WishlistViewModel {
     }
 }
 
+
+extension WishlistViewModel: UISearchBarDelegate, UISearchControllerDelegate {
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        print(searchText)
+        searchResults = (wishlistAllItems.flatMap({ $0 })?.filter({ folder in
+            return folder.folder.lowercased().contains(searchText.lowercased())
+        }))!
+        
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        self.viewController?.cancelButtonClicked()
+    }
+    
+}

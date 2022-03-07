@@ -16,12 +16,12 @@ class WishlistViewController: CoreViewController {
     
     ///Products
     fileprivate var products: Products?
-    
+        
     //MARK: - Initializers
     init(products: Products){
         self.products = products
         super.init(nibName: nil, bundle: nil)
-        viewModel = WishlistViewModel(products: products)
+        viewModel = WishlistViewModel(viewController: self, products: products)
     }
     
     required init?(coder: NSCoder) {
