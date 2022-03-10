@@ -23,13 +23,11 @@ class WishlistViewModel: NSObject {
     private let products: Products?
     
     /// Saved Wishlist Items
-    private let wishlistAllItems: [WishlistFolder]?
+    private var wishlistAllItems: [WishlistFolder]?
     
     /// Collection View Diffable Datasource
     lazy var dataSource = setupDifferableDataSource()
-        
-    private var searchResults:[WishlistFolder] = []
-    
+                
     //MARK: - View Controller Properties
     /// Get AllProductsViewModel's Main View
     /// - Returns: UIView
@@ -51,17 +49,25 @@ class WishlistViewModel: NSObject {
         super.init()
         
         self.viewController?.searchBar.delegate = self
+    
+        applySnapshot()
+    }
+}
 
+
+//MARK: - Diffable Data Source
+extension WishlistViewModel {
+    
+    func applySnapshot(){
         /// Snapshot Data Source
         var dataSourceSnapshot = NSDiffableDataSourceSnapshot<Section,WishlistItemEnum>()
         
         dataSourceSnapshot.appendSections([.main])
-        dataSource.apply(dataSourceSnapshot)
                 
         var sectionSnapshot = NSDiffableDataSourceSectionSnapshot<WishlistItemEnum>()
         
         guard let list = wishlistAllItems else {
-            return
+                return
         }
         
         ///Check if wishlistlist is populated
@@ -75,21 +81,16 @@ class WishlistViewModel: NSObject {
                 
                 sectionSnapshot.expand([folderListItem])
             }
-            dataSource.apply(sectionSnapshot, to: .main, animatingDifferences: false)
+            dataSource.apply(sectionSnapshot, to: .main, animatingDifferences: true)
         }
     }
-}
-
-
-//MARK: - Diffable Data Source
-extension WishlistViewModel {
     
     /// Setup Wishlist Diffable Data Source
     /// - Returns: Returns Diffable Data Source
     func setupDifferableDataSource() -> UICollectionViewDiffableDataSource<Section, WishlistItemEnum>  {
         
         ///Setup Folder Cell
-        let folderCellRegistration = UICollectionView.CellRegistration<UICollectionViewListCell, WishlistFolder> {  cell, indexPath, wishlistFolder in
+        let folderCellRegistration = UICollectionView.CellRegistration<UICollectionViewListCell, WishlistFolder> { cell, indexPath, wishlistFolder in
         
             ///Folder Cell Title Label
             lazy var label = UILabel()
@@ -153,12 +154,32 @@ extension WishlistViewModel {
 
 extension WishlistViewModel: UISearchBarDelegate, UISearchControllerDelegate {
     
+    /// <#Description#>
+    /// - Parameter queryOrNil: <#queryOrNil description#>
+    /// - Returns: <#description#>
+    func filteredFolders(for queryOrNil: String?) -> [WishlistFolder]{
+        guard let folder = products?.getWishlist() else { return wishlistAllItems! }
+        guard let query = queryOrNil, !query.isEmpty else {
+            return folder
+        }
+        
+        return (wishlistAllItems.flatMap({ $0 })?.filter({ folder in
+            
+            var match = folder.folder.lowercased().contains(query.lowercased())
+            for products in folder.products {
+                if products.title.lowercased().contains(query.lowercased()){
+                    match = true
+                    break
+                }
+            }
+            return match
+        }))!
+    }
+    
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         print(searchText)
-        searchResults = (wishlistAllItems.flatMap({ $0 })?.filter({ folder in
-            return folder.folder.lowercased().contains(searchText.lowercased())
-        }))!
-        
+        wishlistAllItems = filteredFolders(for: searchText)
+        applySnapshot()
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {

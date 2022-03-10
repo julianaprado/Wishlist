@@ -16,7 +16,7 @@ enum WishlistItemEnum: Hashable {
     case productList(ProductModel)
 }
 
-/// Main Section of the
+/// Main Section of the Diffable Data Source
 enum Section {
     case main
 }
